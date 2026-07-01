@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Likhit Exam Nepal — Free Driving License Written Test Practice | Category A & B</title>
+<meta name="description" content="Free Likhit exam mock test for Nepal's driving license written exam. Practice traffic signs, rules & vehicle knowledge for Category A (bike) & B (car). Timed tests, instant results, no login.">
+<link rel="canonical" href="https://likhit.thenepal.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Likhit Exam Nepal — Free Driving License Written Test Practice">
+<meta property="og:description" content="Practice Nepal's Likhit written exam free. Timed mock tests, traffic signs, instant results. Category A & B.">
+<meta property="og:url" content="https://likhit.thenepal.io/">
+<meta property="og:site_name" content="Likhit Exam Nepal">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+  /* Prevent CLS while style.css loads — critical layout only */
+  body{margin:0;background:#faf8f3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+</style>
+<link rel="stylesheet" href="style.css">
+
+<!-- JSON-LD: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Likhit Exam Nepal",
+  "url": "https://likhit.thenepal.io/",
+  "description": "Free online mock test platform for Nepal's driving license written (Likhit) exam.",
+  "inLanguage": ["en","ne"]
+}
+</script>
+
+<!-- JSON-LD: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://likhit.thenepal.io/" },
+    { "@type": "ListItem", "position": 2, "name": "Practice Test", "item": "https://likhit.thenepal.io/#practice" }
+  ]
+}
+</script>
+
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many questions are in the Nepal Likhit exam?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The official Likhit written exam typically has 25 multiple-choice questions to be completed in 30 minutes, with a 60% (15 correct) pass requirement. Our mock tests use 30 questions per set for extra practice." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the passing mark for the Likhit exam in Nepal?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You generally need to score at least 60% to pass, which means answering at least 15 out of 25 questions correctly in the official exam." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this Likhit exam practice test free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, all mock tests, traffic sign practice, and study resources on this site are completely free with no login required." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this cover both Category A (bike) and Category B (car) license exams?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, the question bank covers traffic signs, rules, and vehicle knowledge relevant to both Category A (motorcycle/scooter) and Category B (car/jeep/van) license exams." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the mock tests available in Nepali?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The platform is built to support both Nepali and English. English question sets are live now, with Nepali translations being added progressively." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container">
+    <div class="brand"><span class="brand-badge">लि</span> Likhit Exam Nepal</div>
+    <nav class="nav-links">
+      <a href="#practice">Practice Test</a>
+      <a href="#signs">Traffic Signs</a>
+      <a href="#exam-info">Exam Info</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="icon-btn" id="darkModeBtn">🌙 Dark</button>
+  </div>
+</header>
+
+<div id="home">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="road-divider"></div>
+    <h1>Free Likhit Exam Practice Test for Nepal's Driving License</h1>
+    <p class="lead">Practice the official written (Likhit) exam format for Category A (bike/scooter) and Category B (car/jeep) — timed mock tests, real traffic signs, instant results. No login, no app download needed.</p>
+
+    <div class="hero-stats">
+      <div><b>90+</b>Practice Questions</div>
+      <div><b>3</b>Full Mock Tests</div>
+      <div><b>100%</b>Free, No Login</div>
+      <div><b>EN / NE</b>Bilingual</div>
+    </div>
+
+    <div class="category-select" id="categorySelect">
+      <button class="category-chip" data-cat="A">Category A/K — Bike/Scooter</button>
+      <button class="category-chip active" data-cat="B">Category B — Car/Jeep/Van</button>
+      <button class="category-chip" data-cat="C">Category C — Heavy Vehicle</button>
+      <button class="category-chip" data-cat="O">Others</button>
+    </div>
+
+    <a href="#practice" class="btn btn-primary start-test-cta">Start Free Mock Test →</a>
+  </div>
+</section>
+
+<!-- ============ PRACTICE TEST ============ -->
+<section id="practice">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Practice Test</div>
+      <h2>Choose a Mock Test to Begin</h2>
+      <p>Each test is 30 questions, timed at 30 minutes — same pacing as the real Likhit exam. Questions shuffle every attempt.</p>
+    </div>
+    <div class="test-grid" id="testGrid"></div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Why Use This</div>
+      <h2>Built to Match the Real Exam</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature"><div class="ico">📋</div><h4>Official Syllabus Based</h4><p>Questions follow the traffic signs, rules, and vehicle knowledge categories used in the real DoTM exam.</p></div>
+      <div class="feature"><div class="ico">🆕</div><h4>Fresh Question Bank</h4><p>Actively expanding — new question sets added regularly, not a static one-time upload.</p></div>
+      <div class="feature"><div class="ico">🚦</div><h4>Traffic Signs Practice</h4><p>Dedicated section for sign recognition — the #1 area candidates lose marks on.</p></div>
+      <div class="feature"><div class="ico">♾️</div><h4>Unlimited Mock Tests</h4><p>Retake any test as many times as you want — questions reshuffle each time.</p></div>
+      <div class="feature"><div class="ico">🌐</div><h4>Nepali & English</h4><p>Study in the language you're most comfortable with.</p></div>
+      <div class="feature"><div class="ico">📱</div><h4>Mobile Friendly</h4><p>Designed for one-hand use on a phone — no app install required.</p></div>
+      <div class="feature"><div class="ico">🆓</div><h4>Free Access</h4><p>No login, no payment, no hidden limits.</p></div>
+      <div class="feature"><div class="ico">📈</div><h4>Progress Tracking</h4><p>Your recent scores are saved on this device so you can track improvement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXAM INFO ============ -->
+<section id="exam-info">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Exam Information</div>
+      <h2>Likhit Exam Format — What to Expect</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-box"><div class="val">25</div><div class="lbl">Total Questions</div></div>
+      <div class="info-box"><div class="val">30 min</div><div class="lbl">Time Limit</div></div>
+      <div class="info-box"><div class="val">60%</div><div class="lbl">Passing Marks (15/25)</div></div>
+      <div class="info-box"><div class="val">MCQ</div><div class="lbl">Question Format</div></div>
+    </div>
+    <div class="tips-list">
+      <h3 style="margin-top:0">Question Categories Covered</h3>
+      <ul>
+        <li>Traffic signs &amp; road markings</li>
+        <li>Traffic rules &amp; right of way</li>
+        <li>Vehicle documents, penalties &amp; fines</li>
+        <li>Basic vehicle mechanical knowledge</li>
+        <li>Environmental &amp; pollution awareness</li>
+        <li>Accident awareness &amp; safe driving practice</li>
+      </ul>
+      <h3>Tips to Pass the Likhit Exam</h3>
+      <ul>
+        <li>Focus heavily on traffic signs — most candidates lose marks here.</li>
+        <li>Practice with timed mock tests so 30 minutes feels comfortable, not rushed.</li>
+        <li>Review wrong answers immediately — don't just retake blindly.</li>
+        <li>Know category-specific rules (helmet law for Cat A, seatbelt law for Cat B).</li>
+        <li>Read every option fully before choosing — some questions test exceptions.</li>
+      </ul>
+      <div class="note-callout">Exam format shown above reflects commonly reported DoTM figures. Always confirm current details with your local Transport Management Office before your exam date, as formats can be revised.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STUDY RESOURCES / SIGNS ============ -->
+<section class="alt" id="signs">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Study Resources</div>
+      <h2>Know Your Traffic Sign Categories</h2>
+      <p>Every sign in Nepal falls into one of these types — recognizing the shape and color tells you the meaning instantly.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card"><div class="sign-swatch sign-prohibit">🚫</div><h4>Prohibition Signs</h4><p>Red circle — an action is not allowed.</p></div>
+      <div class="resource-card"><div class="sign-swatch sign-warning">⚠️</div><h4>Warning Signs</h4><p>Yellow/red triangle — hazard ahead.</p></div>
+      <div class="resource-card"><div class="sign-swatch sign-mandatory">➡️</div><h4>Mandatory Signs</h4><p>Blue circle — instruction must be followed.</p></div>
+      <div class="resource-card"><div class="sign-swatch sign-info">ℹ️</div><h4>Information Signs</h4><p>Blue/green square — services, directions.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:24px;color:var(--ink-soft);font-size:.9rem">Road markings, vehicle law summaries, and a downloadable PDF cheat sheet are being added next.</p>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">License Categories</div>
+      <h2>Practice by Vehicle Category</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card"><div class="plate">A / K</div><h4>Motorcycle / Scooter</h4><p style="color:var(--ink-soft);font-size:.88rem">Min. age 18 · helmet law · pillion rules</p></div>
+      <div class="cat-card"><div class="plate">B</div><h4>Car / Jeep / Van</h4><p style="color:var(--ink-soft);font-size:.88rem">Min. age 21 · seatbelt law · parking rules</p></div>
+      <div class="cat-card"><div class="plate">C</div><h4>Heavy Vehicle</h4><p style="color:var(--ink-soft);font-size:.88rem">Min. age 23 · commercial route rules</p></div>
+      <div class="cat-card"><div class="plate">•••</div><h4>Others</h4><p style="color:var(--ink-soft);font-size:.88rem">Three-wheelers, special vehicle classes</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Why Trust This</div>
+      <h2>Built for Accuracy, Kept Up to Date</h2>
+    </div>
+    <div class="trust-grid">
+      <div>
+        <ul class="trust-facts">
+          <li>📚 <span>Question bank sourced from publicly available DoTM exam format guidance and traffic rule references, written and verified independently.</span></li>
+          <li>🕒 <span>Last content update: <strong>July 2026</strong>.</span></li>
+          <li>🧩 <span>Currently <strong>90 practice questions</strong> across 3 full mock tests, expanding regularly.</span></li>
+          <li>🔒 <span>No login, no data collection — scores are stored only in your own browser.</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="testimonial">"Please add your first real testimonials here once users start submitting feedback — placeholder removed intentionally."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Common Questions</h2>
+    </div>
+    <div style="max-width:720px;margin:0 auto">
+      <div class="faq-item open">
+        <div class="faq-q">How many questions are in the Nepal Likhit exam? <span class="chevron">⌄</span></div>
+        <div class="faq-a">The official written exam typically has 25 multiple-choice questions in 30 minutes, with a 60% (15/25) pass mark. Our mock tests use 30 questions per set for deeper practice.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the passing mark for the Likhit exam? <span class="chevron">⌄</span></div>
+        <div class="faq-a">You need at least 60% — 15 out of 25 correct answers — in the official exam.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is this practice test free? <span class="chevron">⌄</span></div>
+        <div class="faq-a">Yes, completely free with no login required.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does this cover Category A and Category B? <span class="chevron">⌄</span></div>
+        <div class="faq-a">Yes — traffic signs, rules, and vehicle knowledge relevant to both motorcycle (A) and car (B) categories are covered.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is Nepali language available? <span class="chevron">⌄</span></div>
+        <div class="faq-a">English test sets are live now. Nepali translations are being added progressively.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /#home -->
+
+<!-- ============ QUIZ SCREEN ============ -->
+<div id="quizScreen" class="hide">
+  <div class="container" style="padding-top:24px;padding-bottom:60px">
+    <div class="quiz-wrap">
+      <div class="crumb"><a href="#" id="exitQuizBtn">← Exit test</a></div>
+      <div class="quiz-top">
+        <h3 id="quizTestTitle" style="margin:0"></h3>
+        <span class="timer" id="timerDisplay">30:00</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="question-card">
+        <div class="q-count" id="qCount"></div>
+        <div class="q-text" id="qText"></div>
+        <div id="optionsWrap"></div>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn btn-outline" id="prevBtn">← Previous</button>
+        <button class="btn btn-primary" id="nextBtn">Next →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ RESULT SCREEN ============ -->
+<div id="resultScreen" class="hide">
+  <div class="container" style="padding-top:24px;padding-bottom:60px">
+    <div class="quiz-wrap">
+      <div class="result-hero">
+        <div class="score-ring" id="scoreRing">
+          <span class="num" id="scoreNum">0/30</span>
+          <span class="lbl" id="scorePercent">0%</span>
+        </div>
+        <div class="pass-tag" id="passTag"></div>
+        <p style="color:var(--ink-soft)">Great effort! Review your answers below to strengthen weak areas.</p>
+        <div class="result-actions">
+          <button class="btn btn-primary" id="retryBtn">🔁 Retry Test</button>
+          <button class="btn btn-outline" id="reviewBtn">📖 Review Answers</button>
+          <button class="btn btn-outline" id="shareBtn">🔗 Share Score</button>
+          <button class="btn btn-outline" id="backHomeBtn">🏠 Back to Home</button>
+        </div>
+      </div>
+      <h3 style="margin-top:36px">Your Recent Scores</h3>
+      <div id="recentScores"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ REVIEW SCREEN ============ -->
+<div id="reviewScreen" class="hide">
+  <div class="container" style="padding-top:24px;padding-bottom:60px">
+    <div class="quiz-wrap">
+      <div class="crumb"><a href="#" id="reviewBackBtn">← Back to results</a></div>
+      <h3>Review Your Answers</h3>
+      <div id="reviewWrap"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#practice" class="btn btn-primary start-test-cta">Start Mock Test</a>
+  <button class="btn btn-secondary" id="shareCtaBtn" onclick="navigator.share ? navigator.share({title:'Likhit Exam Nepal',url:location.href}) : alert(location.href)">Share</button>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h5>Likhit Exam Nepal</h5>
+        <p style="font-size:.86rem;color:#a3a9b0">Free, independent practice tests for Nepal's driving license written (Likhit) exam. Not affiliated with the Department of Transport Management.</p>
+      </div>
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="#practice">Practice Test</a></li>
+          <li><a href="#signs">Traffic Signs</a></li>
+          <li><a href="#exam-info">Exam Info</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Use</a></li>
+          <li><a href="/disclaimer.html">Disclaimer</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-grid" style="margin-bottom:8px">
+      <div style="grid-column:1/-1">
+        <h5>Our Network — thenepal.io</h5>
+        <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px 16px">
+          <li><a href="https://gpatopercentage.thenepal.io/">gpatopercentage.thenepal.io</a></li>
+          <li><a href="https://converter.thenepal.io/">converter.thenepal.io</a></li>
+          <li><a href="https://nationalfruit.thenepal.io/">nationalfruit.thenepal.io</a></li>
+          <li><a href="https://nationalflower.thenepal.io/">nationalflower.thenepal.io</a></li>
+          <li><a href="https://nationalflag.thenepal.io/">nationalflag.thenepal.io</a></li>
+          <li><a href="https://nationalfood.thenepal.io/">nationalfood.thenepal.io</a></li>
+          <li><a href="https://neb.thenepal.io/">neb.thenepal.io</a></li>
+          <li><a href="https://pu.thenepal.io/">pu.thenepal.io</a></li>
+          <li><a href="https://letter.thenepal.io/">letter.thenepal.io</a></li>
+          <li><a href="https://blog.thenepal.io/">blog.thenepal.io</a></li>
+          <li><a href="https://tech.thenepal.io/">tech.thenepal.io</a></li>
+          <li><a href="https://sports.thenepal.io/">sports.thenepal.io</a></li>
+          <li><a href="https://car.thenepal.io/">car.thenepal.io</a></li>
+          <li><a href="https://videos.thenepal.io/">videos.thenepal.io</a></li>
+          <li><a href="https://slapbattles.thenepal.io/">slapbattles.thenepal.io</a></li>
+          <li><a href="https://www.thenepal.io/">www.thenepal.io</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Likhit Exam Nepal — part of the thenepal.io network. All rights reserved.</span>
+      <span>Made in Nepal 🇳🇵</span>
+    </div>
+  </div>
+</footer>
+
+<script src="questions.js"></script>
+<script src="quiz.js"></script>
+</body>
+</html>
