@@ -1,0 +1,291 @@
+/* Likhit Exam Nepal — stylesheet
+   Theme: road/highway inspired. Asphalt charcoal + road-marking yellow + sign red.
+   System fonts only (no external font imports, fast load, CLS-safe). */
+
+:root{
+  --asphalt:#1f2328;
+  --asphalt-soft:#2c3138;
+  --road-yellow:#f4b400;
+  --road-yellow-dark:#c98f00;
+  --sign-red:#d1392b;
+  --sign-green:#1f8a4c;
+  --paper:#faf8f3;
+  --paper-dim:#f0ede4;
+  --ink:#1f2328;
+  --ink-soft:#5a5f66;
+  --line:#e1ddd0;
+  --radius:10px;
+  --shadow:0 2px 10px rgba(31,35,40,.08);
+  font-size:16px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+.hide{display:none !important}
+
+/* ---------- Dashed road-line divider (signature element) ---------- */
+.road-divider{
+  height:6px;
+  background-image:repeating-linear-gradient(90deg,var(--road-yellow) 0 28px,transparent 28px 46px);
+  border-radius:3px;
+  margin:0 auto;
+}
+
+/* ---------- Header ---------- */
+.site-header{
+  background:var(--asphalt);
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:50;
+  border-bottom:3px solid var(--road-yellow);
+}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;letter-spacing:.2px}
+.brand-badge{
+  background:var(--road-yellow);color:var(--asphalt);font-weight:900;font-size:.75rem;
+  padding:4px 8px;border-radius:6px;letter-spacing:.5px;
+}
+.nav-links{display:flex;gap:18px;font-size:.92rem}
+.nav-links a{text-decoration:none;color:#e8e6df;opacity:.9}
+.nav-links a:hover{opacity:1;color:var(--road-yellow)}
+.icon-btn{background:none;border:1px solid rgba(255,255,255,.25);color:#fff;padding:6px 10px;border-radius:8px;font-size:.85rem;cursor:pointer}
+@media (max-width:640px){.nav-links{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:var(--asphalt);
+  color:#fff;
+  padding:44px 0 34px;
+  text-align:center;
+}
+.hero .road-divider{margin-bottom:22px;max-width:280px}
+.hero h1{
+  font-size:clamp(1.7rem,4.5vw,2.5rem);
+  margin:0 0 12px;
+  font-weight:800;
+  letter-spacing:-.3px;
+}
+.hero p.lead{
+  color:#cfd2d6;
+  max-width:640px;
+  margin:0 auto 22px;
+  font-size:1.02rem;
+}
+.hero-stats{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin:20px 0 26px;font-size:.88rem;color:#cfd2d6}
+.hero-stats b{color:var(--road-yellow);font-size:1.05rem;display:block}
+
+.category-select{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.category-chip{
+  background:var(--asphalt-soft);
+  border:1.5px solid rgba(255,255,255,.15);
+  color:#fff;
+  padding:9px 18px;
+  border-radius:999px;
+  font-weight:600;
+  font-size:.9rem;
+  cursor:pointer;
+}
+.category-chip.active{background:var(--road-yellow);color:var(--asphalt);border-color:var(--road-yellow)}
+
+.btn{
+  display:inline-block;
+  border:none;
+  border-radius:8px;
+  padding:14px 28px;
+  font-weight:700;
+  font-size:1rem;
+  cursor:pointer;
+  text-decoration:none;
+}
+.btn-primary{background:var(--road-yellow);color:var(--asphalt)}
+.btn-primary:hover{background:var(--road-yellow-dark)}
+.btn-secondary{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-block{width:100%}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* ---------- Sticky mobile CTA ---------- */
+.sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;
+  background:var(--asphalt);
+  padding:10px 16px;
+  display:flex;gap:10px;
+  z-index:60;
+  box-shadow:0 -4px 14px rgba(0,0,0,.2);
+  border-top:2px solid var(--road-yellow);
+}
+.sticky-cta .btn{flex:1;text-align:center;padding:12px}
+@media (min-width:900px){.sticky-cta{display:none}}
+
+/* ---------- Sections ---------- */
+section{padding:48px 0}
+section.alt{background:var(--paper-dim)}
+.section-head{text-align:center;max-width:640px;margin:0 auto 30px}
+.eyebrow{
+  color:var(--sign-red);
+  font-weight:800;
+  font-size:.78rem;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+.section-head h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:6px 0 8px}
+.section-head p{color:var(--ink-soft);margin:0}
+
+/* ---------- Test cards ---------- */
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.test-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;box-shadow:var(--shadow);
+}
+.test-card .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:8px;
+  background:var(--asphalt);color:var(--road-yellow);font-weight:800;margin-bottom:10px;
+}
+.test-card h3{margin:0 0 6px;font-size:1.05rem}
+.test-card p{color:var(--ink-soft);font-size:.88rem;margin:0 0 14px}
+.test-card .meta{display:flex;gap:12px;font-size:.78rem;color:var(--ink-soft);margin-bottom:14px}
+.test-card.locked{opacity:.55}
+.badge-soon{background:var(--paper-dim);border:1px dashed var(--line);color:var(--ink-soft);font-size:.72rem;padding:3px 8px;border-radius:6px}
+
+/* ---------- Features grid ---------- */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.feature{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.feature .ico{font-size:1.4rem;margin-bottom:8px}
+.feature h4{margin:0 0 6px;font-size:.98rem}
+.feature p{margin:0;color:var(--ink-soft);font-size:.86rem}
+
+/* ---------- Exam info table ---------- */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:26px}
+.info-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;text-align:center}
+.info-box .val{font-size:1.5rem;font-weight:800;color:var(--asphalt)}
+.info-box .lbl{font-size:.78rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.4px}
+.tips-list{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 24px}
+.tips-list li{margin-bottom:8px}
+.note-callout{
+  background:#fff7e0;border:1px solid #f0d68a;border-radius:var(--radius);
+  padding:12px 16px;font-size:.85rem;color:#6b5100;margin-top:14px;
+}
+
+/* ---------- Resource / sign cards ---------- */
+.resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.resource-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;text-align:center}
+.sign-swatch{
+  width:56px;height:56px;border-radius:50%;margin:0 auto 10px;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.3rem;
+}
+.sign-prohibit{background:#fff;border:4px solid var(--sign-red);color:var(--sign-red)}
+.sign-warning{background:var(--road-yellow);border:4px solid var(--asphalt);color:var(--asphalt);border-radius:4px;transform:rotate(0deg)}
+.sign-mandatory{background:#1f5fbf;color:#fff;border-radius:50%}
+.sign-info{background:#1f5fbf;color:#fff;border-radius:4px}
+
+/* ---------- Categories ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.cat-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center}
+.cat-card .plate{
+  display:inline-block;background:var(--asphalt);color:var(--road-yellow);
+  font-weight:800;padding:6px 14px;border-radius:6px;margin-bottom:10px;letter-spacing:1px;
+}
+
+/* ---------- Trust ---------- */
+.trust-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;align-items:start}
+@media (max-width:760px){.trust-grid{grid-template-columns:1fr}}
+.trust-facts{list-style:none;padding:0;margin:0}
+.trust-facts li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:10px}
+.trust-facts li:last-child{border-bottom:none}
+.testimonial{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:12px;font-size:.9rem}
+.testimonial .who{margin-top:8px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+
+/* ---------- FAQ ---------- */
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
+.faq-q{
+  padding:16px 18px;font-weight:700;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;font-size:.95rem;
+}
+.faq-a{padding:0 18px 16px;color:var(--ink-soft);font-size:.9rem;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q .chevron{transform:rotate(180deg)}
+.chevron{transition:transform .15s}
+
+/* ---------- Footer ---------- */
+footer{background:var(--asphalt);color:#cfd2d6;padding:40px 0 90px}
+@media (min-width:900px){footer{padding-bottom:40px}}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;margin-bottom:26px}
+@media (max-width:700px){.footer-grid{grid-template-columns:1fr}}
+.footer-grid h5{color:#fff;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px;margin:0 0 12px}
+.footer-grid ul{list-style:none;padding:0;margin:0}
+.footer-grid li{margin-bottom:8px;font-size:.86rem}
+.footer-grid a{text-decoration:none;color:#cfd2d6}
+.footer-grid a:hover{color:var(--road-yellow)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:18px;font-size:.8rem;color:#9aa0a6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* ---------- Quiz screens ---------- */
+.quiz-wrap{max-width:700px;margin:0 auto}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+.timer{
+  font-variant-numeric:tabular-nums;font-weight:800;font-size:1.1rem;
+  background:var(--asphalt);color:var(--road-yellow);padding:8px 14px;border-radius:8px;
+}
+.timer.warn{background:var(--sign-red);color:#fff}
+.progress-bar{height:8px;background:var(--paper-dim);border-radius:4px;overflow:hidden;margin-bottom:22px}
+.progress-fill{height:100%;background:var(--road-yellow);transition:width .2s}
+.question-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.q-count{font-size:.8rem;color:var(--ink-soft);font-weight:700;margin-bottom:8px}
+.q-text{font-size:1.1rem;font-weight:700;margin-bottom:18px}
+.opt{
+  display:flex;align-items:center;gap:10px;
+  border:1.5px solid var(--line);border-radius:8px;padding:13px 14px;margin-bottom:10px;
+  cursor:pointer;font-size:.95rem;
+}
+.opt:hover{border-color:var(--road-yellow-dark)}
+.opt.selected{border-color:var(--road-yellow-dark);background:#fff8e6}
+.opt.correct{border-color:var(--sign-green);background:#eafaf0}
+.opt.wrong{border-color:var(--sign-red);background:#fdecea}
+.opt .letter{
+  width:26px;height:26px;border-radius:6px;background:var(--paper-dim);
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;flex-shrink:0;
+}
+.quiz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.explain-box{background:var(--paper-dim);border-radius:8px;padding:12px 14px;font-size:.85rem;color:var(--ink-soft);margin-top:14px}
+
+/* ---------- Results ---------- */
+.result-hero{text-align:center;padding:20px 0 10px}
+.score-ring{
+  width:150px;height:150px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  margin:0 auto 18px;border:10px solid var(--paper-dim);
+}
+.score-ring.pass{border-color:var(--sign-green)}
+.score-ring.fail{border-color:var(--sign-red)}
+.score-ring .num{font-size:2rem;font-weight:800}
+.score-ring .lbl{font-size:.75rem;color:var(--ink-soft)}
+.pass-tag{display:inline-block;padding:6px 16px;border-radius:999px;font-weight:800;font-size:.85rem;margin-bottom:10px}
+.pass-tag.pass{background:#eafaf0;color:var(--sign-green)}
+.pass-tag.fail{background:#fdecea;color:var(--sign-red)}
+.result-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.review-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:10px}
+.review-item .tag{font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:6px;margin-right:8px}
+.review-item .tag.correct{background:#eafaf0;color:var(--sign-green)}
+.review-item .tag.wrong{background:#fdecea;color:var(--sign-red)}
+
+/* ---------- Category screen (in-quiz test list) ---------- */
+.crumb{font-size:.85rem;color:var(--ink-soft);margin-bottom:16px}
+.crumb a{color:var(--road-yellow-dark);text-decoration:none;font-weight:600}
+
+/* dark mode */
+body.dark{--paper:#15181c;--paper-dim:#1b1f24;--ink:#eceef0;--ink-soft:#a3a9b0;--line:#2a2f36}
+body.dark .question-card,body.dark .test-card,body.dark .feature,body.dark .info-box,
+body.dark .resource-card,body.dark .cat-card,body.dark .faq-item,body.dark .testimonial,
+body.dark .review-item{background:#1e2227}
+body.dark .opt{background:#1e2227}
